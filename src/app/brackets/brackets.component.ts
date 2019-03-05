@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { TeamModule } from '../team.module';
 
 @Component({
   selector: 'app-brackets',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BracketsComponent implements OnInit {
 
-  constructor() { }
+  westernTeams: TeamModule[] = [];
+  easternTeams: TeamModule[] = [];
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.apiService.onChangeEastern.subscribe(
+      (teams: TeamModule[]) => {
+        this.easternTeams = teams;
+      }
+    );
+    this.apiService.onChangeWestern.subscribe(
+      (teams: TeamModule[]) => {
+        this.westernTeams = teams;
+      }
+    );
+    this.apiService.getEasternTeams();
+    this.apiService.getWesternTeams();
   }
 
 }

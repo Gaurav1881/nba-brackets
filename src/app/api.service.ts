@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TeamModule } from './team.module';
+import { Subject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -8,6 +9,8 @@ import { TeamModule } from './team.module';
 export class ApiService {
     easternTeams: TeamModule[] = [];
     westernTeams: TeamModule[] = [];
+    onChangeEastern: Subject<TeamModule[]> = new Subject();
+    onChangeWestern: Subject<TeamModule[]> = new Subject();
     constructor(private https: HttpClient) { }
 
     async getEasternTeams() {
@@ -22,6 +25,7 @@ export class ApiService {
                 await data.league.standard.forEach(async element2 => {
                     if (element.teamId === element2.teamId) {
                         element.teamName = element2.fullName;
+                        this.onChangeEastern.next(this.easternTeams);
                     }
                 });
             });
@@ -40,6 +44,7 @@ export class ApiService {
                 await data.league.standard.forEach(async element2 => {
                     if (element.teamId === element2.teamId) {
                         element.teamName = element2.fullName;
+                        this.onChangeWestern.next(this.westernTeams.slice());
                     }
                 });
             });
