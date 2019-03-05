@@ -8,7 +8,5 @@ import { ApiService } from './api.service';
 export class AppComponent {
   title = 'nba-brackets';
   constructor(private api: ApiService) {
-    api.getEasternTeams();
-    api.getWesternTeams();
   }
 }
