@@ -1,122 +1,124 @@
-<h1>2019 NBA Playoff Bracket</h1>
+<div class="col-md-8 col-md-offset-2">
+    <h1>2019 NBA Playoff Bracket</h1>
+    <main id="tournament">
+        <ul class="round round-1">
+          <li class="spacer">&nbsp;</li>
+      
+          <li class="game game-top" *ngIf='this.easternTeams.has(1)'> {{ this.easternTeams.get(1).teamName}} <span>{{
+              this.easternTeams.get(1).wins}}</span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom " *ngIf='this.easternTeams.has(8)'> {{ this.easternTeams.get(8).teamName}} <span>{{
+              this.easternTeams.get(8).wins}} </span></li>
+      
+          <li class="spacer">&nbsp;</li>
+      
+          <li class="game game-top" *ngIf='this.easternTeams.has(4)'> {{ this.easternTeams.get(4).teamName}} <span> {{
+              this.easternTeams.get(4).wins}}</span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom " *ngIf='this.easternTeams.has(5)'> {{ this.easternTeams.get(5).teamName}} <span> {{
+              this.easternTeams.get(5).wins}} </span></li>
+      
+          <li class="spacer">&nbsp;</li>
+      
+          <li class="game game-top " *ngIf='this.easternTeams.has(2)'> {{ this.easternTeams.get(3).teamName}}<span> {{
+              this.easternTeams.get(3).wins}}</span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom" *ngIf='this.easternTeams.has(6)'> {{ this.easternTeams.get(6).teamName}} <span> {{
+              this.easternTeams.get(6).wins}} </span></li>
+      
+          <li class="spacer">&nbsp;</li>
+      
+          <li class="game game-top" *ngIf='this.easternTeams.has(2)'> {{ this.easternTeams.get(2).teamName}} <span> {{
+              this.easternTeams.get(2).wins}} </span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom " *ngIf='this.easternTeams.has(7)'> {{ this.easternTeams.get(7).teamName}} <span> {{
+              this.easternTeams.get(7).wins}} </span></li>
+      
+          <li class="spacer">&nbsp;</li>
+      
+          <li class="game game-top" *ngIf='this.westernTeams.has(1)'> {{ this.westernTeams.get(1).teamName}} <span> {{
+              this.westernTeams.get(1).wins}} </span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom " *ngIf='this.westernTeams.has(8)'> {{ this.westernTeams.get(8).teamName}} <span>{{
+              this.westernTeams.get(8).wins}}</span></li>
+      
+          <li class="spacer">&nbsp;</li>
+      
+          <li class="game game-top" *ngIf='this.westernTeams.has(4)'> {{ this.westernTeams.get(4).teamName}} <span> {{
+              this.westernTeams.get(4).wins}}</span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom " *ngIf='this.westernTeams.has(5)'> {{ this.westernTeams.get(5).teamName}} <span>{{
+              this.westernTeams.get(5).wins}}</span></li>
+      
+          <li class="spacer">&nbsp;</li>
+      
+          <li class="game game-top" *ngIf='this.westernTeams.has(6)'>{{ this.westernTeams.get(6).teamName}} <span>{{
+              this.westernTeams.get(6).wins}}</span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom " *ngIf='this.westernTeams.has(3)'> {{ this.westernTeams.get(3).teamName}} <span>{{
+              this.westernTeams.get(3).wins}}</span></li>
+      
+          <li class="spacer">&nbsp;</li>
+      
+          <li class="game game-top" *ngIf='this.westernTeams.has(2)'> {{ this.westernTeams.get(2).teamName}} <span>{{
+              this.westernTeams.get(2).wins}}</span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom " *ngIf='this.westernTeams.has(7)'>{{ this.westernTeams.get(7).teamName}} <span>{{
+              this.westernTeams.get(7).wins}}</span></li>
+      
+          <li class="spacer">&nbsp;</li>
+        </ul>
+        <ul class="round round-2">
+          <li class="spacer">&nbsp;</li>
+      
+          <li class="game game-top"> <span></span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom ">  <span></span></li>
+      
+          <li class="spacer">&nbsp;</li>
+      
+          <li class="game game-top"> <span></span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom ">  <span></span></li>
+      
+          <li class="spacer">&nbsp;</li>
+      
+          <li class="game game-top "> <span></span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom">  <span></span></li>
+      
+          <li class="spacer">&nbsp;</li>
+      
+          <li class="game game-top "> <span></span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom"> <span></span></li>
+      
+          <li class="spacer">&nbsp;</li>
+        </ul>
+        <ul class="round round-3">
+          <li class="spacer">&nbsp;</li>
+      
+          <li class="game game-top"> <span></span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom "> <span></span></li>
+      
+          <li class="spacer">&nbsp;</li>
+      
+          <li class="game game-top ">  <span></span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom"> <span></span></li>
+      
+          <li class="spacer">&nbsp;</li>
+        </ul>
+        <ul class="round round-4">
+          <li class="spacer">&nbsp;</li>
+      
+          <li class="game game-top"> <span></span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom "> <span></span></li>
+      
+          <li class="spacer">&nbsp;</li>
+        </ul>
+      </main>
+</div>
 
-<main id="tournament">
-  <ul class="round round-1">
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner" *ngIf='this.easternTeams[0]'> {{ this.easternTeams[0].teamName}} <span>{{
-        this.easternTeams[0].wins}}</span></li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom " *ngIf='this.easternTeams[7]'> {{ this.easternTeams[7].teamName}} <span>{{
-        this.easternTeams[7].wins}} </span></li>
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner" *ngIf='this.easternTeams[3]'> {{ this.easternTeams[3].teamName}} <span> {{
-        this.easternTeams[3].wins}}</span></li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom " *ngIf='this.easternTeams[4]'> {{ this.easternTeams[4].teamName}} <span> {{
-        this.easternTeams[4].wins}} </span></li>
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top " *ngIf='this.easternTeams[2]'> {{ this.easternTeams[2].teamName}}<span> {{
-        this.easternTeams[2].wins}}</span></li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom winner" *ngIf='this.easternTeams[5]'> {{ this.easternTeams[5].teamName}} <span> {{
-        this.easternTeams[5].wins}} </span></li>
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner" *ngIf='this.easternTeams[1]'> {{ this.easternTeams[1].teamName}} <span> {{
-        this.easternTeams[1].wins}} </span></li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom " *ngIf='this.easternTeams[6]'> {{ this.easternTeams[6].teamName}} <span> {{
-        this.easternTeams[6].wins}} </span></li>
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner" *ngIf='this.westernTeams[0]'> {{ this.westernTeams[0].teamName}} <span> {{
-        this.westernTeams[0].wins}} </span></li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom " *ngIf='this.westernTeams[7]'> {{ this.westernTeams[7].teamName}} <span>{{
-        this.westernTeams[7].wins}}</span></li>
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner" *ngIf='this.westernTeams[3]'> {{ this.westernTeams[3].teamName}} <span> {{
-        this.westernTeams[3].wins}}</span></li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom " *ngIf='this.westernTeams[4]'> {{ this.westernTeams[4].teamName}} <span>{{
-        this.westernTeams[4].wins}}</span></li>
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner" *ngIf='this.westernTeams[5]'>{{ this.westernTeams[5].teamName}} <span>{{
-        this.westernTeams[5].wins}}</span></li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom " *ngIf='this.westernTeams[2]'> {{ this.westernTeams[2].teamName}} <span>{{
-        this.westernTeams[2].wins}}</span></li>
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner" *ngIf='this.westernTeams[1]'> {{ this.westernTeams[1].teamName}} <span>{{
-        this.westernTeams[1].wins}}</span></li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom " *ngIf='this.westernTeams[6]'>{{ this.westernTeams[6].teamName}} <span>{{
-        this.westernTeams[6].wins}}</span></li>
-
-    <li class="spacer">&nbsp;</li>
-  </ul>
-  <ul class="round round-2">
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner">Lousville <span>82</span></li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">Colo St <span>56</span></li>
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner">Oregon <span>74</span></li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">Saint Louis <span>57</span></li>
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top ">Memphis <span>48</span></li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom winner">Mich St <span>70</span></li>
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top ">Creighton <span>50</span></li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom winner">Duke <span>66</span></li>
-
-    <li class="spacer">&nbsp;</li>
-  </ul>
-  <ul class="round round-3">
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner">Lousville <span>77</span></li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">Oregon <span>69</span></li>
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top ">Mich St <span>61</span></li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom winner">Duke <span>71</span></li>
-
-    <li class="spacer">&nbsp;</li>
-  </ul>
-  <ul class="round round-4">
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner">Lousville <span>85</span></li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">Duke <span>63</span></li>
-
-    <li class="spacer">&nbsp;</li>
-  </ul>
-</main>

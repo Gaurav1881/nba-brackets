@@ -7,48 +7,75 @@ import { Subject } from 'rxjs';
     providedIn: 'root'
 })
 export class ApiService {
-    easternTeams: TeamModule[] = [];
-    westernTeams: TeamModule[] = [];
-    onChangeEastern: Subject<TeamModule[]> = new Subject();
-    onChangeWestern: Subject<TeamModule[]> = new Subject();
+    easternTeams:Map<number, TeamModule> = new Map<number, TeamModule>();
+    westernTeams:Map<number, TeamModule> = new Map<number, TeamModule>();
+    easternTeamsAdded: number = 0;
+    westernTeamsAdded: number = 0;
+    onChangeEastern: Subject<Map<number, TeamModule>> = new Subject();
+    onChangeWestern: Subject<Map<number, TeamModule>> = new Subject();
+    teamData = "";
     constructor(private https: HttpClient) { }
 
-    async getEasternTeams() {
-        await this.https.get('https://cors-anywhere.herokuapp.com/http://data.nba.net/10s/prod/v1/current/standings_conference.json').subscribe(async (data: any) => {
-            await data.league.standard.conference.east.forEach(async element => {
-                let currTeam = await new TeamModule(element.teamId, element.win, element.loss);
-                await this.easternTeams.push(currTeam);
-            });
-        });
-        await this.https.get('https://cors-anywhere.herokuapp.com/http://data.nba.net/10s/prod/v2/2018/teams.json').subscribe(async (data: any) => {
-            await this.easternTeams.forEach(async element => {
-                await data.league.standard.forEach(async element2 => {
-                    if (element.teamId === element2.teamId) {
-                        element.teamName = element2.fullName;
-                        this.onChangeEastern.next(this.easternTeams);
-                    }
-                });
-            });
-        });
-        await console.log(this.easternTeams);
+    teamAddedEastern(){
+        this.easternTeamsAdded = this.easternTeamsAdded+1;
+        if(this.easternTeamsAdded == 15){
+            for(let key of Array.from(this.easternTeams.keys())){
+                let team = this.easternTeams.get(key);
+                this.easternTeams.set(team.position, team);
+                this.easternTeams.delete(key);
+            }
+            this.onChangeEastern.next(this.easternTeams);
+        }
     }
-    async getWesternTeams() {
-        await this.https.get('https://cors-anywhere.herokuapp.com/http://data.nba.net/10s/prod/v1/current/standings_conference.json').subscribe(async (data: any) => {
-            await data.league.standard.conference.west.forEach(async element => {
-                let currTeam = await new TeamModule(element.teamId, element.win, element.loss);
-                await this.westernTeams.push(currTeam);
-            });
+    teamAddedWestern(){
+        this.westernTeamsAdded = this.westernTeamsAdded+1;
+        if(this.westernTeamsAdded == 15){
+            for(let key of Array.from(this.westernTeams.keys())){
+                let team = this.westernTeams.get(key);
+                this.westernTeams.set(team.position, team);
+                this.westernTeams.delete(key);
+            }
+            this.onChangeWestern.next(this.westernTeams);
+        }
+    }
+    async getTeamNames() {
+        this.https.get('https://cors-anywhere.herokuapp.com/http://data.nba.net/10s/prod/v2/2018/teams.json')
+        .subscribe(
+        (data: any) => {
+            this.teamData = data;
         });
-        await this.https.get('https://cors-anywhere.herokuapp.com/http://data.nba.net/10s/prod/v2/2018/teams.json').subscribe(async (data: any) => {
-            await this.westernTeams.forEach(async element => {
-                await data.league.standard.forEach(async element2 => {
-                    if (element.teamId === element2.teamId) {
-                        element.teamName = element2.fullName;
-                        this.onChangeWestern.next(this.westernTeams.slice());
-                    }
-                });
+        this.https.get('https://cors-anywhere.herokuapp.com/http://data.nba.net/10s/prod/v1/current/standings_conference.json')
+        .subscribe(
+            (data: any) => {
+                let index = 1;
+                data.league.standard.conference.east.forEach(team => {
+                    this.easternTeams.set(team.teamId, new TeamModule(team.teamId, team.win, team.loss, index));
+                    index++;
             });
+            this.assignNames(this.teamData);
         });
-        await console.log(this.westernTeams);
+        this.https.get('https://cors-anywhere.herokuapp.com/http://data.nba.net/10s/prod/v1/current/standings_conference.json')
+        .subscribe(
+            (data: any) => {
+                let index = 1;
+                data.league.standard.conference.west.forEach(team => {
+                    this.westernTeams.set(team.teamId, new TeamModule(team.teamId, team.win, team.loss, index));
+                    index++;
+            });
+            this.assignNames(this.teamData);
+        });
+    }
+
+    assignNames(data){
+            data.league.standard.forEach(team => {
+            if (this.easternTeams.has(team.teamId)) {
+                this.easternTeams.get(team.teamId).teamName = team.fullName;
+                this.teamAddedEastern();
+            }
+            if (this.westernTeams.has(team.teamId)) {
+                this.westernTeams.get(team.teamId).teamName = team.fullName;
+                this.teamAddedWestern();
+            }
+        });
     }
 }

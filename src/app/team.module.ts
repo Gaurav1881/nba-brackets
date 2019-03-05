@@ -3,9 +3,11 @@ export class TeamModule {
     teamName: string;
     wins: number;
     loss: number;
-    constructor(teamId, wins, loss) {
+    position: number;
+    constructor(teamId, wins, loss, position) {
         this.teamId = teamId;
         this.wins = wins;
         this.loss = loss;
+        this.position = position;
     }
 }

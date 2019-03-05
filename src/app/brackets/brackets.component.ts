@@ -9,23 +9,22 @@ import { TeamModule } from '../team.module';
 })
 export class BracketsComponent implements OnInit {
 
-  westernTeams: TeamModule[] = [];
-  easternTeams: TeamModule[] = [];
+  westernTeams: Map<number, TeamModule> = new Map<number, TeamModule>();
+  easternTeams: Map<number, TeamModule> =  new Map<number, TeamModule>();
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
     this.apiService.onChangeEastern.subscribe(
-      (teams: TeamModule[]) => {
+      (teams:Map<number, TeamModule>) => {
         this.easternTeams = teams;
       }
     );
     this.apiService.onChangeWestern.subscribe(
-      (teams: TeamModule[]) => {
+      (teams: Map<number, TeamModule>) => {
         this.westernTeams = teams;
       }
     );
-    this.apiService.getEasternTeams();
-    this.apiService.getWesternTeams();
+    this.apiService.getTeamNames();
   }
 
 }
