@@ -1,124 +1,147 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
 <div class="col-md-8 col-md-offset-2">
-    <h1>2019 NBA Playoff Bracket</h1>
-    <main id="tournament">
-        <ul class="round round-1">
-          <li class="spacer">&nbsp;</li>
-      
-          <li class="game game-top" *ngIf='this.easternTeams.has(1)'> {{ this.easternTeams.get(1).teamName}} <span>{{
-              this.easternTeams.get(1).wins}}</span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom " *ngIf='this.easternTeams.has(8)'> {{ this.easternTeams.get(8).teamName}} <span>{{
-              this.easternTeams.get(8).wins}} </span></li>
-      
-          <li class="spacer">&nbsp;</li>
-      
-          <li class="game game-top" *ngIf='this.easternTeams.has(4)'> {{ this.easternTeams.get(4).teamName}} <span> {{
-              this.easternTeams.get(4).wins}}</span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom " *ngIf='this.easternTeams.has(5)'> {{ this.easternTeams.get(5).teamName}} <span> {{
-              this.easternTeams.get(5).wins}} </span></li>
-      
-          <li class="spacer">&nbsp;</li>
-      
-          <li class="game game-top " *ngIf='this.easternTeams.has(2)'> {{ this.easternTeams.get(3).teamName}}<span> {{
-              this.easternTeams.get(3).wins}}</span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom" *ngIf='this.easternTeams.has(6)'> {{ this.easternTeams.get(6).teamName}} <span> {{
-              this.easternTeams.get(6).wins}} </span></li>
-      
-          <li class="spacer">&nbsp;</li>
-      
-          <li class="game game-top" *ngIf='this.easternTeams.has(2)'> {{ this.easternTeams.get(2).teamName}} <span> {{
-              this.easternTeams.get(2).wins}} </span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom " *ngIf='this.easternTeams.has(7)'> {{ this.easternTeams.get(7).teamName}} <span> {{
-              this.easternTeams.get(7).wins}} </span></li>
-      
-          <li class="spacer">&nbsp;</li>
-      
-          <li class="game game-top" *ngIf='this.westernTeams.has(1)'> {{ this.westernTeams.get(1).teamName}} <span> {{
-              this.westernTeams.get(1).wins}} </span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom " *ngIf='this.westernTeams.has(8)'> {{ this.westernTeams.get(8).teamName}} <span>{{
-              this.westernTeams.get(8).wins}}</span></li>
-      
-          <li class="spacer">&nbsp;</li>
-      
-          <li class="game game-top" *ngIf='this.westernTeams.has(4)'> {{ this.westernTeams.get(4).teamName}} <span> {{
-              this.westernTeams.get(4).wins}}</span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom " *ngIf='this.westernTeams.has(5)'> {{ this.westernTeams.get(5).teamName}} <span>{{
-              this.westernTeams.get(5).wins}}</span></li>
-      
-          <li class="spacer">&nbsp;</li>
-      
-          <li class="game game-top" *ngIf='this.westernTeams.has(6)'>{{ this.westernTeams.get(6).teamName}} <span>{{
-              this.westernTeams.get(6).wins}}</span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom " *ngIf='this.westernTeams.has(3)'> {{ this.westernTeams.get(3).teamName}} <span>{{
-              this.westernTeams.get(3).wins}}</span></li>
-      
-          <li class="spacer">&nbsp;</li>
-      
-          <li class="game game-top" *ngIf='this.westernTeams.has(2)'> {{ this.westernTeams.get(2).teamName}} <span>{{
-              this.westernTeams.get(2).wins}}</span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom " *ngIf='this.westernTeams.has(7)'>{{ this.westernTeams.get(7).teamName}} <span>{{
-              this.westernTeams.get(7).wins}}</span></li>
-      
-          <li class="spacer">&nbsp;</li>
-        </ul>
-        <ul class="round round-2">
-          <li class="spacer">&nbsp;</li>
-      
-          <li class="game game-top"> <span></span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom ">  <span></span></li>
-      
-          <li class="spacer">&nbsp;</li>
-      
-          <li class="game game-top"> <span></span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom ">  <span></span></li>
-      
-          <li class="spacer">&nbsp;</li>
-      
-          <li class="game game-top "> <span></span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom">  <span></span></li>
-      
-          <li class="spacer">&nbsp;</li>
-      
-          <li class="game game-top "> <span></span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom"> <span></span></li>
-      
-          <li class="spacer">&nbsp;</li>
-        </ul>
-        <ul class="round round-3">
-          <li class="spacer">&nbsp;</li>
-      
-          <li class="game game-top"> <span></span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom "> <span></span></li>
-      
-          <li class="spacer">&nbsp;</li>
-      
-          <li class="game game-top ">  <span></span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom"> <span></span></li>
-      
-          <li class="spacer">&nbsp;</li>
-        </ul>
-        <ul class="round round-4">
-          <li class="spacer">&nbsp;</li>
-      
-          <li class="game game-top"> <span></span></li>
-          <li class="game game-spacer">&nbsp;</li>
-          <li class="game game-bottom "> <span></span></li>
-      
-          <li class="spacer">&nbsp;</li>
-        </ul>
-      </main>
-</div>
+  <h1 style="text-align: center;" class="title strokeme">2019 NBA PLAYOFF BRACKET</h1>
+  <label class="switch">
+    <input type="checkbox" [(ngModel)]="playgroundMode">
+    <span class="slider round"></span>
+  </label>
+  <hr style="border: 1px solid black;">
+  <main id="tournament">
+    <ul class="round round-1">
+      <li class="spacer">&nbsp;</li>
 
+      <li class="game game-top" [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Eastern(1)">
+        {{ this.easternTeams.has(1) ? this.easternTeams.get(1).teamName : ''}}<span>{{
+          this.easternTeams.has(1) ? this.easternTeams.get(1).wins : ''}}</span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom " [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Eastern(8)">
+        {{ this.easternTeams.has(8) ? this.easternTeams.get(8).teamName : ''}} <span>{{
+          this.easternTeams.has(8) ? this.easternTeams.get(8).wins : ''}} </span></li>
+
+      <li class="spacer">&nbsp;</li>
+
+      <li class="game game-top" [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Eastern(4)">
+        {{ this.easternTeams.has(4) ? this.easternTeams.get(4).teamName : ''}} <span> {{
+          this.easternTeams.has(4) ? this.easternTeams.get(4).wins : ''}}</span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom" [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Eastern(5)">
+        {{ this.easternTeams.has(5) ? this.easternTeams.get(5).teamName : ''}} <span> {{
+          this.easternTeams.has(5) ? this.easternTeams.get(5).wins : ''}} </span></li>
+
+      <li class="spacer">&nbsp;</li>
+
+      <li class="game game-top " [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Eastern(3)">
+        {{ this.easternTeams.has(3) ? this.easternTeams.get(3).teamName : ''}}<span> {{
+          this.easternTeams.has(3) ? this.easternTeams.get(3).wins : ''}}</span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom" [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Eastern(6)">
+        {{ this.easternTeams.has(6) ? this.easternTeams.get(6).teamName : ''}} <span> {{
+          this.easternTeams.has(6) ? this.easternTeams.get(6).wins : ''}} </span></li>
+
+      <li class="spacer">&nbsp;</li>
+
+      <li class="game game-top" [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Eastern(2)">
+        {{ this.easternTeams.has(2) ? this.easternTeams.get(2).teamName : ''}} <span> {{
+          this.easternTeams.has(2) ? this.easternTeams.get(2).wins : ''}} </span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom " [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Eastern(7)">
+        {{ this.easternTeams.has(7) ? this.easternTeams.get(7).teamName : ''}} <span> {{
+          this.easternTeams.has(7) ? this.easternTeams.get(7).wins : ''}} </span></li>
+
+      <li class="spacer">&nbsp;</li>
+
+      <li class="game game-top" [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Western(1)">
+        {{ this.westernTeams.has(1) ? this.westernTeams.get(1).teamName : ''}} <span> {{
+          this.westernTeams.has(1) ? this.westernTeams.get(1).wins : ''}} </span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom " [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Western(8)">
+        {{ this.westernTeams.has(8) ? this.westernTeams.get(8).teamName : ''}} <span>{{
+          this.westernTeams.has(8) ? this.westernTeams.get(8).wins : ''}}</span></li>
+
+      <li class="spacer">&nbsp;</li>
+
+      <li class="game game-top" [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Western(4)">
+        {{ this.westernTeams.has(4) ? this.westernTeams.get(4).teamName : ''}} <span> {{
+          this.westernTeams.has(4) ? this.westernTeams.get(4).wins : ''}}</span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom " [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Western(5)">
+        {{ this.westernTeams.has(5) ? this.westernTeams.get(5).teamName : ''}} <span>{{
+          this.westernTeams.has(5) ? this.westernTeams.get(5).wins : ''}}</span></li>
+
+      <li class="spacer">&nbsp;</li>
+
+      <li class="game game-top" [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Western(6)">{{
+        this.westernTeams.has(6) ? this.westernTeams.get(6).teamName : ''}} <span>{{
+          this.westernTeams.has(6) ? this.westernTeams.get(6).wins : ''}}</span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom " [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Western(3)">
+        {{ this.westernTeams.has(3) ? this.westernTeams.get(3).teamName : ''}} <span>{{
+          this.westernTeams.has(3) ? this.westernTeams.get(3).wins : ''}}</span></li>
+
+      <li class="spacer">&nbsp;</li>
+
+      <li class="game game-top" [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Western(2)">
+        {{ this.westernTeams.has(2) ? this.westernTeams.get(2).teamName : ''}} <span>{{
+          this.westernTeams.has(2) ? this.westernTeams.get(2).wins : ''}}</span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom " [ngStyle]="{'cursor': playgroundMode ? 'pointer': 'auto' }" (click)="onSelectRound2Western(7)">{{
+        this.westernTeams.has(7) ? this.westernTeams.get(7).teamName : ''}} <span>{{
+          this.westernTeams.has(7) ? this.westernTeams.get(7).wins : ''}}</span></li>
+
+      <li class="spacer">&nbsp;</li>
+    </ul>
+    <ul class="round round-2">
+      <li class="spacer">&nbsp;</li>
+
+      <li class="game game-top">{{ this.easternRound2.has(1) ? this.easternRound2.get(1).teamName : ''}} <span></span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom "> {{ this.easternRound2.has(2) ? this.easternRound2.get(2).teamName : ''}} <span></span></li>
+
+      <li class="spacer">&nbsp;</li>
+
+      <li class="game game-top">{{ this.easternRound2.has(3) ? this.easternRound2.get(3).teamName : ''}} <span></span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom ">{{ this.easternRound2.has(4) ? this.easternRound2.get(4).teamName : ''}} <span></span></li>
+
+      <li class="spacer">&nbsp;</li>
+
+      <li class="game game-top "> <span></span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom"> <span></span></li>
+
+      <li class="spacer">&nbsp;</li>
+
+      <li class="game game-top "> <span></span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom"> <span></span></li>
+
+      <li class="spacer">&nbsp;</li>
+    </ul>
+    <ul class="round round-3">
+      <li class="spacer">&nbsp;</li>
+
+      <li class="game game-top"> <span></span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom "> <span></span></li>
+
+      <li class="spacer">&nbsp;</li>
+
+      <li class="game game-top "> <span></span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom"> <span></span></li>
+
+      <li class="spacer">&nbsp;</li>
+    </ul>
+    <ul class="round round-4">
+      <li class="spacer">&nbsp;</li>
+
+      <li class="game game-top"> <span></span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom "> <span></span></li>
+
+      <li class="spacer">&nbsp;</li>
+    </ul>
+  </main>
+</div>
